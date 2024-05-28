@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection.Metadata.Ecma335;
+
 namespace MethodOverloading
 { 
     class Program
@@ -28,7 +30,7 @@ namespace MethodOverloading
             else
             {
                 return $"{num1 + num2}";
-            }
+            }            
         }
 
         static void Main(string[] args)
@@ -40,7 +42,13 @@ namespace MethodOverloading
 
             var r1 = Add(a, b);
             var r2 = Add(c, d);
-            var r3 = Add(a, b, false);
-       }
+            var r3 = Add(a, b, true);
+
+            Console.WriteLine($"Add OverRide1 Answer (int): {r1}");
+            Console.WriteLine($"Add OverRide2 Answer (decimal): {r2}");
+            Console.WriteLine($"Add OverRide3 Answer (string): {r3}");
+            Console.Read();
+
+        }
     }
 }
